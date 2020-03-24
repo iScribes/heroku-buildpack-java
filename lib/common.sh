@@ -93,9 +93,13 @@ install_jdk() {
   echo "DOWNLOADING BUILDPACK FROM $JVM_COMMON_BUILDPACK"
   curl --retry 3 --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common --strip-components=1
   echo "DOWNLOADED BUILDPACK FROM $JVM_COMMON_BUILDPACK"
+  echo "source /tmp/jvm-common/bin/util"
   source /tmp/jvm-common/bin/util
+  echo "source /tmp/jvm-common/bin/java"
   source /tmp/jvm-common/bin/java
+  echo "source /tmp/jvm-common/opt/jdbc.sh"
   source /tmp/jvm-common/opt/jdbc.sh
+  echo "jvm-common.install.time ${start}"
   mtime "jvm-common.install.time" "${start}"
 
   let start=$(nowms)
