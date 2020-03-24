@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "STARTING DETECT"
+
 if [ -n "${CNB_STACK_ID:-}" ]; then
   buildDir="$(pwd)"
   name="Maven"
@@ -22,3 +24,4 @@ else
   (>&2 echo "Could not find a pom.xml file! Please check that it exists and is committed to Git.")
   exit 1
 fi
+echo "FINISHED DETECT"

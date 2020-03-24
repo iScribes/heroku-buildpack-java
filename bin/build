@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "STARTING BUILD"
 # fail fast
 set -e
 
@@ -39,3 +40,4 @@ EOF
     break;
   done
 fi
+echo "FINISHED BUILD"

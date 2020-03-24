@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
+echo "STARTING RELEASE"
 
 BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
 BUILD_DIR=$1
@@ -28,3 +29,5 @@ if [ ! -f $BUILD_DIR/Procfile ] && [ -d $BUILD_DIR/target ]; then
     break;
   done
 fi
+echo "FINISHED RELEASE"
+

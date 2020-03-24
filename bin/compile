@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-dir>
+echo "STARTING COMPILE"
 
 # fail fast
 set -e
@@ -24,3 +25,4 @@ install_jdk "${BUILD_DIR}" "${CACHE_DIR}"
 
 run_mvn "compile" $BUILD_DIR $CACHE_DIR
 remove_mvn $BUILD_DIR $CACHE_DIR
+echo "FINISHED COMPILE"

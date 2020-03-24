@@ -2,6 +2,7 @@
 # bin/test <build-dir> <env-dir> <artifact-dir>
 
 # fail fast
+echo "STARTING TEST"
 set -e
 
 BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
@@ -23,3 +24,5 @@ if has_maven_wrapper $BUILD_DIR; then
 else
   mvn -B ${mvn_settings_opt} ${MAVEN_HEROKU_CI_GOAL:-test}
 fi
+echo "FINISHED TEST"
+
